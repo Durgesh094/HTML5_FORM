@@ -82,7 +82,18 @@
                 emailError.textContent = "Email is incorrect";
             }
         })
-        
+
+        const number = document.querySelector("#number");
+        const numberError = document.querySelector(".number-error")
+        text.addEventListener('input', function () {
+            let numberRegex = RegExp('^[0-9]{2}+[ ][0-9]{10}$');
+            if (numberRegex.test(text.value)) {
+                numberError.textContent = "";
+            } else {
+                numberError.textContent = "number is incorrect";
+            }
+        })
+
         const salary = document.querySelector("#salary");
         const output = document.querySelector(".salary-output");
         salary.addEventListener('input', function () {
