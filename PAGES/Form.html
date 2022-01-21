@@ -94,6 +94,17 @@
             }
         })
 
+        const password = document.querySelector("#password");
+        const pwdError = document.querySelector(".pwd-error")
+        text.addEventListener('input', function () {
+            let passwordRegex = RegExp("^[a-zA-Z0-9+-_!@#$%^&*(){}'.,]{8,}");
+            if (passwordRegex.test(text.value)) {
+                pwdError.textContent = "";
+            } else {
+                pwdError.textContent = "password is incorrect";
+            }
+        })
+
         const salary = document.querySelector("#salary");
         const output = document.querySelector(".salary-output");
         salary.addEventListener('input', function () {
